@@ -1,0 +1,109 @@
+body {  
+    margin: 0;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 100vh;
+    transition: background-color 1s ease-in-out;
+}
+.animated-div {
+width: 150px;
+height: 150px;
+background-color:green;
+margin: 50px;
+
+}
+.animated-div_1{
+        width: 150px;
+        height: 150px;
+        border-radius: 20%;
+        background-color:yellowgreen;
+        margin: 50px;
+}
+@media (max-width: 599px) {
+.animated-div {
+border-radius: 50%; 
+animation-name: trial;
+animation-duration: 5s ;
+animation-iteration-count: infinite;
+}
+.animated-div_1{
+    animation-name:example;
+    position:relative; 
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+body{
+    background:pink;
+}}
+
+@keyframes trial {
+from{ background-color: green; }
+to { background-color: aquamarine; }}
+@keyframes example {0%   {background-color: yellow; bottom:0px; top:0px;}
+25%  {background-color:aqua; bottom:200px; top:0px;}
+50%  {background-color:blue; bottom:0 px; top:200px;}
+75%  {background-color:green; bottom:200px; top:0px;}
+100% {background-color:yellowgreen; bottom:0px; top:0px;}
+}
+
+
+
+
+
+@media (min-width: 600px) and (max-width: 799px) {
+.animated-div {
+animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+0% { transform: rotate(0deg); background-color: blueviolet;}
+100% { transform: rotate(360deg); }
+}
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+.animated-div {
+width: 400px;
+height: 300px;
+animation: move 4s infinite alternate;
+}
+
+@keyframes move {
+0% { transform: translateX(0); }
+100% { transform: translateX(100px); }
+}
+}
+@media (min-width: 1000px) and (max-width: 1199px) {
+.animated-div {
+border-radius: 50%;
+width: 200px;
+height: 100px;
+animation: bounce 2s infinite ease-in-out;
+}
+body{
+background: blue;
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-30px); }
+}
+}
+@media (min-width: 1200px) {
+.animated-div {
+width: 0;
+height: 0;
+border: 50px solid transparent;
+animation: flip 3s infinite linear;
+background-color: yellowgreen;
+}
+body{
+background: red;
+}
+
+@keyframes flip {
+0% { transform: rotateY(0); }
+100% { transform: rotateY(360deg); }
+}
+}
